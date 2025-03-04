@@ -13,6 +13,7 @@ const initialState = {
 export const Contact = () => {
   const [{ name, email, message }, setState] = useState(initialState);
 
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
