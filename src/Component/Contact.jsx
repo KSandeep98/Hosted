@@ -13,7 +13,7 @@ const initialState = {
 export const Contact = () => {
   const [{ name, email, message }, setState] = useState(initialState);
 
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
@@ -72,14 +72,14 @@ export const Contact = () => {
           </div>
 
           {/* Right Side: Contact Info */}
-          <div className="md:w-1/3 bg-gray-100 p-6 rounded-lg shadow-md">
-            <p className="text-gray-600 flex items-center">
+          <div className="  md:w-1/3 bg-gray-100 p-6 rounded-lg shadow-md flex flex-col justify-center items-center">
+            <p className="text-gray-600">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-blue-600" /> Nagpur, Maharashtra
             </p>
-            <p className="text-gray-600 flex items-center">
+            <p className="text-gray-600">
               <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-blue-600" /> 9049xxxx44
             </p>
-            <p className="text-gray-600 flex items-center">
+            <p className="text-gray-600">
               <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-blue-600" /> HostedMinds@gmail.com
             </p>
 
