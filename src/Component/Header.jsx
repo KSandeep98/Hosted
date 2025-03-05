@@ -4,7 +4,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#69c] text-white shadow-md z-10">
+    <nav className="fixed top-0 left-0 w-full bg-[#69c] text-white shadow-md z-50">
       <div className="container mx-auto px-2 md:px-0 py-3 flex justify-between items-center">
         {/* Left Side: Logo & Brand Name */}
         <div className="flex items-center">
@@ -45,6 +45,7 @@ const Header = () => {
               { name: "Services", href: "#services" },
               { name: "Shop", href: "#portfolio" },
               { name: "Contact", href: "#contact" },
+              { name: "T&C", href: "Term.jsx" },
             ].map((item, index) => (
               <li key={index} className="py-2 md:py-0">
                 <a
