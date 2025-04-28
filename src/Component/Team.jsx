@@ -30,7 +30,7 @@ export const Team = () => {
             <div className="container mx-auto">
                 <h1 className="text-4xl font-bold text-gray-700">Our Team</h1>
                 <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-                    This team page has a quirky, vibrant energy that immediately catches your attention – a good sign for a design company.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, recusandae.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
                     {teamMembers.map((member, index) => {
@@ -60,7 +60,7 @@ export const Team = () => {
                         return (
                             <motion.div
                                 key={index}
-                                className="p-6 shadow-lg bg-amber-50 transition-all duration-300 hover:bg-blue-600 hover:text-white rounded-lg"
+                                className="p-6 shadow-lg bg-amber-50 transition-all duration-300 hover:bg-[#69c] hover:text-white rounded-lg active:bg-[#69c] active:text-white"
                                 onMouseMove={handleMouse}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
@@ -97,3 +97,4 @@ export const Team = () => {
 };
 
 export default Team;
+  

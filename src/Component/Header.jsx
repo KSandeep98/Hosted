@@ -5,10 +5,10 @@ const Header = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#69c] text-white shadow-md z-50">
-      <div className="container mx-auto px-2 md:px-0 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-2 md:px-0 py-3  flex justify-between items-center">
         {/* Left Side: Logo & Brand Name */}
         <div className="flex items-center">
-          <a href="#page-top" className="mr-2">
+          <a href="#page-top" className="mx-2">
             <img src="/Hm.png" width={40} alt="Logo" />
           </a>
           <h1 className="font-bold hover:text-yellow-300 transition cursor-pointer">

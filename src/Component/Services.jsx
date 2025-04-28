@@ -7,7 +7,7 @@ const Services = () => {
                 <img
                     src="https://img.freepik.com/free-vector/confident-people-collection_23-2148392617.jpg?t=st=1741171955~exp=1741175555~hmac=da1f842fb1aea0e49f2663a955d86c613a143a0c5896de114616f06229f19717&w=900"
                     alt="STEM"
-                    className="w-22 h-20 sm:w-23 sm:h-23 object-cover rounded-full"
+                    className="w-22 h-20 sm:w-43 sm:h-43 object-cover"
                 />
             ),
             title: "STEM",
@@ -55,7 +55,7 @@ const Services = () => {
                             key={index}
                             className="flex flex-col items-center text-center p-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-300 transition-transform transform hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:shadow-xl"
                         >
-                            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/20 mb-4 transition-all duration-300 hover:bg-white/40">
+                            <div className="flex items-center justify-center w-20 h-20 sm:w-44 sm:h-44  bg-white/20 mb-4 transition-all duration-300 hover:bg-white/40">
                                 {service.icon}
                             </div>
                             <h3 className="text-white text-lg sm:text-xl font-medium mb-2">{service.title}</h3>

@@ -28,7 +28,7 @@ const Terms = () => {
                 </motion.h1>
             </div>
 
-            <div className="mx-10 my-10 space-y-2 text-gray-800">
+            <div className="mx-5 md:mx-10 my-10 space-y-2 text-gray-800">
                 {/* Introduction */}
                 <motion.div initial="hidden" animate="visible" variants={sectionVariants}>
                     <p className='mb-2.5 font-bold'>Welcome to <span className="font-extrabold">HOSTEDMINDS.COM</span>!</p>
@@ -52,7 +52,9 @@ const Terms = () => {
                             <li>Only regular-priced items may be refunded; sale items cannot be refunded.</li>
                         </ul></p>
                     <h2 className="font-bold">Exchanges (if applicable)</h2>
-                    <p>We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at <span className="text-blue-600 font-medium">info@hostedminds.com</span> send your item to the address mentioned in the reply email.</p>
+                    <p>We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at <a href="mailto:info@hostedminds.com" className="text-blue-600 font-medium hover:underline">
+                         info@hostedminds.com
+                    </a>send your item to the address mentioned in the reply email.</p>
                     <h2 className="font-bold">Exempt Goods</h2>
                     <p><ul className="list-disc list-inside ">
                         <li>Educational Cources</li>

@@ -7,8 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss(),],
   assetsInclude: ["**/*.JPG"],
   server:{
-    host:'192.168.29.76',
+    host:'0.0.0.0',
     port:3000
   }
-  
 })

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+
+* {
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    font-family: "Raleway", sans-serif; 
+}
+.typography{
+    font-family: "Raleway", sans-serif; 
+
+}
+
+.whole {
+    width: 100vw;
+    height: 100%; 
+    padding: 50px;
+    background-image: url("../assets/BGA1..png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container { 
+    position: relative;
+    left: 20px; 
+    width: 100vw;
+    padding: 0px 2px;
+}
+
+.heading, .subheading, .sectionTitle {
+    color: #1976d2;
+    font-weight: bold;
+}
+
+.contentBox {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.ListItem {
+    font-size: 14px;
+    margin-bottom: -15px;
+}
