@@ -1,61 +1,166 @@
-
+import { Box, Typography, Stack, Link as MuiLink } from '@mui/material';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faLinkedin, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#69c] text-white py-10 px-6 flex flex-col md:flex-row justify-evenly items-center md:items-start text-center md:text-left z-50 mt-auto">
+        <Box
+            component="footer"
+            sx={{
+                width: '100%',
+                backgroundColor: '#69c',
+                color: 'white',
+                py: 5,
+                px: 3,
+                pl: { xs: 3, md: 12 },
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: { xs: 'center', md: 'flex-start' },
+                textAlign: { xs: 'center', md: 'left' },
+                mt: 'auto',
+                zIndex: 50,
+            }}
+        >
             {/* Left Section */}
-            <div className="mb-4 md:mb-0">
-                <h3 className="text-2xl font-bold">HostedMinds</h3>
-                <p className="mt-2 hover:text-white">Made by Bhaiyaji Initiative</p>
-                <div className="flex space-x-4 mt-4 justify-center md:justify-start">
-                    <a href="https://www.facebook.com/hostedminds" target="_blank" className="text-blue-700 hover:text-white text-2xl" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebook} />
-                    </a>
-                    <a href="https://www.twitter.com/hostedminds" target="_blank" className="text-blue-500 hover:text-white text-2xl" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCMMFpvruEVHe6VAggzb85sA" target="_blank" className="text-red-600 hover:text-white text-2xl" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faYoutube} />
-                    </a>
-                    <a href="https://www.linkedin.com/company/hostedminds/" target="_blank" className="text-blue-800 hover:text-white text-2xl" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
-                    <a href="https://www.instagram.com/hostedminds/" target="_blank" className="text-pink-500 hover:text-white text-2xl" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faInstagram} />
-                    </a>
-                    
-                </div>
-                <p className="text-xs md:mt-3 text-gray-200 text-center w-full hidden md:block">
-                2024 © All Rights Reserved HostedMinds
-            </p>
-            </div>
+            <Stack
+                direction="row"
+                spacing={{ xs: 2, md: 15 }}
+                alignItems="flex-start"
+                justifyContent={{ xs: 'center', md: 'flex-start' }} // Center on mobile
+                width={{ xs: '100%', md: 'auto' }}
+                textAlign={{ xs: 'center', md: 'left' }} // Center text on mobile
+            >
+                {/* Desktop Logo */}
+                <MuiLink
+                    href="#page-top"
+                    underline="none"
+                    sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', pt:3 }}
+                >
+                    <img src="/Hm.png" width={100} alt="Logo" />
+                </MuiLink>
+
+                <Box mb={{ xs: 4, md: 0 }}>
+                    {/* Mobile Logo */}
+                    <MuiLink
+                        href="#page-top"
+                        underline="none"
+                        sx={{ display: { xs: 'flex', sm: 'none' }, justifyContent: 'center', mb: 1 }}
+                    >
+                        <img src="/Hm.png" width={40} alt="Logo" />
+                    </MuiLink>
+
+                    <Typography fontWeight="600">NAVONMESHAK HOSTEDMINDS</Typography>
+                    <Typography fontWeight="600">TECHSOLUTIONS PVT LTD.</Typography>
+
+                    <Stack
+  direction="row"
+  spacing={2}
+  mt={2}
+  justifyContent={{ xs: 'center', md: 'flex-start' }}
+>
+  <MuiLink
+    href="https://www.facebook.com/hostedminds"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      '&:hover svg': { color: '#FFFFFF' }
+    }}
+  >
+    <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '1.5rem' }} color="#1877F2" />
+  </MuiLink>
+
+  <MuiLink
+    href="https://www.twitter.com/hostedminds"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      '&:hover svg': { color: '#FFFFFF' }
+    }}
+  >
+    <FontAwesomeIcon icon={faXTwitter} style={{ fontSize: '1.5rem' }} color="#000000" />
+  </MuiLink>
+
+  <MuiLink
+    href="https://www.youtube.com/channel/UCMMFpvruEVHe6VAggzb85sA"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      '&:hover svg': { color: '#FFFFFF' }
+    }}
+  >
+    <FontAwesomeIcon icon={faYoutube} style={{ fontSize: '1.5rem' }} color="#FF0000" />
+  </MuiLink>
+
+  <MuiLink
+    href="https://www.linkedin.com/company/hostedminds/"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      '&:hover svg': { color: '#FFFFFF' }
+    }}
+  >
+    <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: '1.5rem' }} color="#0077B5" />
+  </MuiLink>
+
+  <MuiLink
+    href="https://www.instagram.com/hostedminds/"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      '&:hover svg': { color: '#FFFFFF' }
+    }}
+  >
+    <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '1.5rem' }} color="#E1306C" />
+  </MuiLink>
+</Stack>
+
+
+                    {/* Desktop copyright */}
+                    <Typography
+                        variant="caption"
+                        sx={{
+                            mt: 2,
+                            color: '#fff',
+                            display: { xs: 'none', md: 'block' },
+                        }}
+                    >
+                        2024 © All Rights Reserved HostedMinds
+                    </Typography>
+                </Box>
+            </Stack>
+
 
             {/* About & Services Section */}
-            <div className="flex flex-row md:flex-row justify-center text-start gap-6 md:gap-40">
-                {/* About */}
-                <div className="flex flex-col space-y-2">
-                    <h4 className="text-lg font-semibold">About</h4>
-                    <p className="hover:text-black cursor-pointer">Our Mission</p>
-                    <p className="hover:text-black cursor-pointer">Privacy Policy</p>
-                    <p className="hover:text-black cursor-pointer">Terms of Service</p>
-                </div>
+            <Stack
+                direction="row"
+                spacing={{ xs: 3, md: 20 }}
+                justifyContent="center"
+                textAlign="left"
+                mt={{ xs: 4, md: 0 }}
+                sx={{ ml: { xs: 2, md: 20 } }}
+            >
+                <Stack spacing={1}>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>About</Typography>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>Our Mission</Typography>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>Privacy Policy</Typography>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>Terms & Conditions</Typography>
+                </Stack>
 
-                {/* Services */}
-                <div className="flex flex-col space-y-2">
-                    <h4 className="text-lg font-semibold">Services</h4>
-                    <p className="hover:text-black cursor-pointer">Shop</p>
-                    <p className="hover:text-black cursor-pointer">Join our Team</p>
-                    <p className="hover:text-black cursor-pointer">Partner with Us</p>
-                </div>
-            </div>
-            <div>
-            <p className="text-xs mt-4 text-gray-200 text-center w-full block md:hidden">
-                2024 © All Rights Reserved HostedMinds
-            </p>
-            </div>
-        </footer>
+                <Stack spacing={1}>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>Services</Typography>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>Shop</Typography>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>Blog Page</Typography>
+                    <Typography sx={{ cursor: 'pointer', '&:hover': { color: 'black' } }}>FAQ</Typography>
+                </Stack>
+            </Stack>
+
+            {/* Mobile Copyright */}
+            <Box mt={1} display={{ xs: 'block', md: 'none' }} width="100%">
+                <Typography variant="caption" sx={{ color: '#fff', textAlign: 'center', width: '100%', ml: { xs: 2 } }}>
+                    2024 © All Rights Reserved HostedMinds
+                </Typography>
+            </Box>
+        </Box>
     );
 };
 
