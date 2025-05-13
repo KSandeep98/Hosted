@@ -8,8 +8,9 @@ const AboutUs = () => {
                 <Grid item xs={12}>
                     <Typography
                         variant="h4"
+                       
                         gutterBottom
-                        sx={{ textAlign: 'center', width: '100%' }}
+                        sx={{ textAlign: 'center', width: '100%',  fontWeight: 'bold' ,color: '#69c'}}
                     >
                         About Us
                     </Typography>

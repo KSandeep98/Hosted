@@ -135,189 +135,182 @@ export default function ContactForm() {
   };
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "black",
-        color: "white",
-        minHeight: "100vh",
-        pt: 2,
-      }}
-    >
-      <Container>
-        <Typography
-          variant="h5"
-          align="center"
-          gutterBottom
-          sx={{ fontWeight: "bold" }}
-        >
-          LOCATION CONTACT FORM
-        </Typography>
+    <>
+      <div id="contact" style={{ paddingTop: "10px" }}></div>
+        <Container>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              height: { md: "80%", xs: "auto" },
+              my: 10,
+              borderRadius: 2,
+              overflow: "hidden",
+              boxShadow: 5,
+            }}
+          >
+            {/* Left Side - Map and Contact Info */}
+            <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+              <Box sx={{ flex: 1 }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.4204606503513!2d75.34641777499859!3d19.86445998150926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba32d8726a0a3%3A0xcc355f9df5c78151!2sHostedminds!5e0!3m2!1sen!2sin!4v1746446182213!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Location Map"
+                ></iframe>
+              </Box>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            height: { xs: "auto", md: "90vh" },
-            mt: 2,
-            borderRadius: 2,
-            overflow: "hidden",
-            boxShadow: -5,
-          }}
-        >
-          <Box sx={{ flex: 1 }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.4204606503513!2d75.34641777499859!3d19.86445998150926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba32d8726a0a3%3A0xcc355f9df5c78151!2sHostedminds!5e0!3m2!1sen!2sin!4v1746446182213!5m2!1sen!2sin"
-              width="100%"
-              height="90%"
-              style={{ border: "0" }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Location Map"
-            ></iframe>
-            <Paper
-              sx={{
-                backgroundColor: "white",
-                py: 3,
-                px: { xs: 2, sm: 3, md: 4 },
-                color: "black",
-                borderRadius: "0",
-              }}
-            >
-              <Box
+              <Paper
                 sx={{
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  alignItems: { xs: "flex-start", sm: "center" },
-                  // padding-left: { xs: 10, sm: 10 },
-                  alignItems: { xs: "space-between", sm: "center" },
-                  pl: { xs: 10, sm: 0 },
-                  justifyContent: { xs: "space-between", sm: "center" },
-                  gap: { xs: 2, sm: 10 },
+                  backgroundColor: "white",
+                  py: 3,
+                  px: { xs: 2, sm: 3, md: 4 },
+                  color: "black",
+                  borderRadius: 0,
                 }}
               >
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Email fontSize="small" sx={{ mr: 1, color: "#0a4d8c" }} />
-                  <Typography
-                    variant="body2"
-                    sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
-                  >
-                    hostedminds@gmail.com
-                  </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: { xs: 2, sm: 10 },
+                  }}
+                >
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Email fontSize="small" sx={{ mr: 1, color: "#0a4d8c" }} />
+                    <Typography
+                      variant="body2"
+                      sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
+                    >
+                      hostedminds@gmail.com
+                    </Typography>
+                  </Box>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Phone fontSize="small" sx={{ mr: 1, color: "#0a4d8c" }} />
+                    <Typography
+                      variant="body2"
+                      sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
+                    >
+                      (+91) 9370334705
+                    </Typography>
+                  </Box>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Phone fontSize="small" sx={{ mr: 1, color: "#0a4d8c" }} />
-                  <Typography
-                    variant="body2"
-                    sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
+              </Paper>
+            </Box>
+
+            {/* Right Side - Contact Form */}
+            <Paper
+              sx={{
+                flex: 1,
+                backgroundColor: "white",
+                p: { xs: 3, sm: 6,  },
+                borderRadius: 0,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              <Box sx={{ mb: 1 }}>
+                <Typography
+                  variant="h5"
+                  gutterBottom
+                  sx={{
+                    color: "black",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  SEND A MESSAGE
+                </Typography>
+
+                <Box
+                  component="form"
+                  onSubmit={handleSubmit}
+                  sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+                >
+                  <TextField
+                    name="from_name"
+                    placeholder="Name"
+                    value={formData.from_name}
+                    onChange={handleChange}
+                    fullWidth
+                    variant="outlined"
+                    error={Boolean(errors.from_name)}
+                    helperText={errors.from_name}
+                    InputProps={{
+                      sx: { backgroundColor: "grey.200", color: "black" },
+                    }}
+                  />
+                  <TextField
+                    name="from_email"
+                    placeholder="Email"
+                    type="email"
+                    value={formData.from_email}
+                    onChange={handleChange}
+                    fullWidth
+                    variant="outlined"
+                    error={Boolean(errors.from_email)}
+                    helperText={errors.from_email}
+                    InputProps={{
+                      sx: { backgroundColor: "grey.200", color: "black" },
+                    }}
+                  />
+                  <TextField
+                    name="reply_to"
+                    placeholder="Mobile Number"
+                    type="tel"
+                    value={formData.reply_to}
+                    onChange={handleChange}
+                    fullWidth
+                    variant="outlined"
+                    error={Boolean(errors.reply_to)}
+                    helperText={errors.reply_to}
+                    InputProps={{
+                      sx: { backgroundColor: "grey.200", color: "black" },
+                    }}
+                  />
+                  <TextField
+                    name="message"
+                    placeholder="Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    fullWidth
+                    multiline
+                    rows={4}
+                    variant="outlined"
+                    error={Boolean(errors.message)}
+                    helperText={errors.message}
+                    InputProps={{
+                      sx: { backgroundColor: "grey.200", color: "black" },
+                    }}
+                  />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "#69c",
+                      color: "white",
+                      fontWeight: "bold",
+                      width: "50%",
+                      mx: "auto",
+                      py: 1,
+                      "&:hover": { backgroundColor: "#1c3d66" },
+                    }}
                   >
-                    (+91) 90xxxxxx44
-                  </Typography>
+                    SEND
+                  </Button>
                 </Box>
               </Box>
             </Paper>
           </Box>
-
-          <Paper
-            sx={{ flex: 1, backgroundColor: "white", p: 4, borderRadius: 0 }}
-          >
-            <Box
-              sx={{
-                mb: 1,
-                display: "flex",
-                flexDirection: "column",
-                gap: "25px",
-              }}
-            >
-              <Typography
-                variant="h5"
-                gutterBottom
-                sx={{ color: "black", fontWeight: "bold", alignSelf: "center" }}
-              >
-                SEND A MESSAGE
-              </Typography>
-
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                sx={{ display: "flex", flexDirection: "column", gap: 2 }}
-              >
-                <TextField
-                  name="from_name"
-                  placeholder="Name"
-                  value={formData.from_name}
-                  onChange={handleChange}
-                  fullWidth
-                  variant="outlined"
-                  error={Boolean(errors.from_name)}
-                  helperText={errors.from_name}
-                  InputProps={{
-                    sx: { backgroundColor: "grey.200", color: "black" },
-                  }}
-                />
-                <TextField
-                  name="from_email"
-                  placeholder="Email"
-                  type="email"
-                  value={formData.from_email}
-                  onChange={handleChange}
-                  fullWidth
-                  variant="outlined"
-                  error={Boolean(errors.from_email)}
-                  helperText={errors.from_email}
-                  InputProps={{
-                    sx: { backgroundColor: "grey.200", color: "black" },
-                  }}
-                />
-                <TextField
-                  name="reply_to"
-                  placeholder="Mobile Number"
-                  type="tel"
-                  value={formData.reply_to}
-                  onChange={handleChange}
-                  fullWidth
-                  variant="outlined"
-                  error={Boolean(errors.reply_to)}
-                  helperText={errors.reply_to}
-                  InputProps={{
-                    sx: { backgroundColor: "grey.200", color: "black" },
-                  }}
-                />
-                <TextField
-                  name="message"
-                  placeholder="Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  fullWidth
-                  multiline
-                  rows={4}
-                  variant="outlined"
-                  error={Boolean(errors.message)}
-                  helperText={errors.message}
-                  InputProps={{
-                    sx: { backgroundColor: "grey.200", color: "black" },
-                  }}
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    backgroundColor: "#69c",
-                    color: "white",
-                    fontWeight: "bold",
-                    width: "15%",
-                    mx: "auto",
-                    py: 0.5,
-                    "&:hover": { backgroundColor: "#1c3d66" },
-                  }}
-                >
-                  SEND
-                </Button>
-              </Box>
-            </Box>
-          </Paper>
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+    
+    </>
   );
 }

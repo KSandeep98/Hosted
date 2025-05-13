@@ -198,7 +198,7 @@ const Services = () => {
         <Box sx={{ width: '100%', backgroundColor: '#f5f5f5', py: 1, pb:8, px: { xs: 2, sm: 4, md: 6, lg: 10 } }} > 
          {/* fff */}
         
-         <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', my: 4 }} >Services</Typography>
+         <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', my: 4,fontWeight: 'bold' }} >Services</Typography>
         
             <Grid container spacing={4}>
                 {services.map((service, index) => (

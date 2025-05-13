@@ -4,17 +4,20 @@ import Home from '../Component/Home'
 import Partners from '../Component/Partners'
 import ProjectSection from '../Component/ProjectSection'
 import Services from '../Component/Services'
-// import Team from '../Component/Team'
+import ContactForm from '../Component/ContactForm'
+import '../App.css'
 
 const HomePage = () => {
   return (
     <div>
+
       <Home/>
       <AboutUs/>
       <Services/>
       <ProjectSection/>
       <Partners/>
-      {/* <Team/> */}
+      <ContactForm/>
+     
 
 
     </div>

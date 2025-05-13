@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import {
   AppBar,
@@ -16,7 +15,7 @@ const navItems = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/", scrollToId: "services" },
   { name: "Shop", href: "/shop" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/", scrollToId: "contact" },
   { name: "Insights", href: "/Insights" },
 ];
 
@@ -30,35 +29,34 @@ const Header = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActiveSection("services");
-        } else {
-          setActiveSection("");
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
       },
-      {
-        root: null,
-        threshold: 0.6, // Trigger when 60% of section is visible
-      }
+      { threshold: 0.6 }
     );
 
-    const servicesSection = document.getElementById("services");
-    if (servicesSection) {
-      observer.observe(servicesSection);
-    }
+    const sectionsToObserve = ["services", "contact"];
+    sectionsToObserve.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
 
     return () => {
-      if (servicesSection) {
-        observer.unobserve(servicesSection);
-      }
+      sectionsToObserve.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) observer.unobserve(section);
+      });
     };
   }, [location.pathname]);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -70,7 +68,7 @@ const Header = () => {
         scrollToSection(item.scrollToId);
       } else {
         navigate("/");
-        setTimeout(() => scrollToSection(item.scrollToId), 100);
+        setTimeout(() => scrollToSection(item.scrollToId), 300); // Give DOM time to render
       }
     } else {
       navigate(item.href);
@@ -78,33 +76,29 @@ const Header = () => {
   };
 
   const isActive = (item) => {
-    if (item.scrollToId === "services") {
-      return location.pathname === "/" && activeSection === "services";
+    if (item.scrollToId) {
+      return location.pathname === "/" && activeSection === item.scrollToId;
     }
-    return location.pathname === item.href && !item.scrollToId;
+    return location.pathname === item.href;
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: "#69c", zIndex: 1200 }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          {/* Logo and Brand */}
+          {/* Logo */}
           <Box
             display="flex"
             alignItems="center"
             component="a"
             href="/"
-            sx={{
-              textDecoration: "none",
-              color: "white",
-              cursor: "pointer",
-            }}
+            sx={{ textDecoration: "none", color: "white", cursor: "pointer" }}
           >
             <img src="/Hm.png" alt="Logo" width={40} style={{ marginRight: 8 }} />
-            <img src="/HostedMinds.png" alt="Brand" width={200} style={{ marginRight: 8 }} />
+            <img src="/HostedMinds.png" alt="Brand" width={200} />
           </Box>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           {!isMobile ? (
             <Box display="flex" gap={1}>
               {navItems.map((item, index) => {
@@ -114,13 +108,13 @@ const Header = () => {
                     key={index}
                     onClick={() => handleNavClick(item)}
                     sx={{
-                      color: active ? 'yellow' : '#fff',
-                      fontSize: active ? '1.2rem' : '1rem',
+                      color: active ? "yellow" : "#fff",
+                      fontSize: active ? "1.2rem" : "1rem",
                       textTransform: "none",
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        color: 'yellow',
-                        transform: 'scale(1.05)',
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        color: "yellow",
+                        transform: "scale(1.05)",
                       },
                     }}
                   >
@@ -139,16 +133,15 @@ const Header = () => {
               <MenuIcon />
             </IconButton>
           )}
-
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Navigation Dropdown */}
+      {/* Mobile Menu */}
       {isMobile && isOpen && (
         <Box
           sx={{
             position: "fixed",
-            top: 55,
+            top: 56,
             left: 0,
             width: "100%",
             backgroundColor: "#69c",
@@ -164,8 +157,7 @@ const Header = () => {
                 fontSize: "18px",
                 color: "white",
                 cursor: "pointer",
-                '&:hover': { color: "black" },
-
+                "&:hover": { color: "black" },
               }}
               onClick={() => handleNavClick(item)}
             >
