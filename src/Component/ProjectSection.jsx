@@ -15,8 +15,10 @@ export default function ProjectSection() {
             component="img"
             src="/Featured.jpg"
             alt="Alpha Developer Team"
-            sx={{ width: '100%',  maxWidth: 500,
-                height: 300, borderRadius: 2 }}
+            sx={{
+              width: '100%', maxWidth: 500,
+              height: 300, borderRadius: 2
+            }}
           />
         </Grid>
 
@@ -29,7 +31,7 @@ export default function ProjectSection() {
             HostedMinds
           </Typography>
           <Typography variant="body1" color="text.secondary" paragraph>
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores in, incidunt velit laboriosam vitae iste eum fuga rem molestias atque cum aliquam officia error temporibus laudantium debitis asperiores exercitationem.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores in, incidunt velit laboriosam vitae iste eum fuga rem molestias atque cum aliquam officia error temporibus laudantium debitis asperiores exercitationem.
           </Typography>
 
           <Grid container spacing={2}>
@@ -46,6 +48,7 @@ export default function ProjectSection() {
       </Grid>
 
       {/* CountUp Section */}
+      {/* CountUp Section */}
       <Grid
         container
         spacing={4}
@@ -55,14 +58,22 @@ export default function ProjectSection() {
         ref={ref}
       >
         {[
-          { label: 'Projects', value: 15000 },
-          { label: 'Members', value: 30000 },
-          { label: 'Clients', value: 50000 },
-          { label: 'Deployments', value: 44000 }
-        ].map(({ label, value }) => (
-          <Grid item xs={6} md={3} key={label}>
-            <Typography variant="h3" fontWeight="bold" color="primary">
-              {inView && <CountUp end={value} duration={2} separator="," />}
+          { label: 'Projects Served', value: 35, suffix: '+' },
+          { label: 'Customer Satisfaction', value: 98, suffix: '%' },
+          { label: 'Lean Team Efficiency', value: 5, suffix: 'x' },
+          { label: 'Projects Delivered On Time', value: 100, suffix: '%' },
+          { label: 'Customer Satisfaction', value: 98, suffix: '%' }
+        ].map(({ label, value, suffix }) => (
+          <Grid  item xs={6} md={2} key={label} >
+            <Typography variant="h3" fontWeight="bold" color="primary" component="div">
+              {inView && (
+                <span style={{ display: 'inline-flex', alignItems: 'flex-end' }}>
+                  <CountUp end={value} duration={2} separator="," />
+                  <Typography variant="h3" component="span" color="primary" ml={0.5}>
+                    {suffix}
+                  </Typography>
+                </span>
+              )}
             </Typography>
             <Typography color="text.secondary" mt={1}>
               {label}
@@ -70,6 +81,7 @@ export default function ProjectSection() {
           </Grid>
         ))}
       </Grid>
+
     </Box>
   )
 }

@@ -42,7 +42,7 @@ const Partners = () => {
           overflow: 'hidden',
           position: 'relative',
           width: '100%',
-          maxWidth: '960px',
+          maxWidth: '1370px',
           m: 'auto',
           '::before': {
             content: '""',

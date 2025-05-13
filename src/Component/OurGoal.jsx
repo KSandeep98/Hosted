@@ -94,7 +94,7 @@ const OurGoal = () => {
             </Typography>
 
             {/* Skills / Progress Bars */}
-            <Box>
+            {/* <Box>
               <Typography variant="subtitle1" gutterBottom>
                 UI/UX Design (90%)
               </Typography>
@@ -121,7 +121,7 @@ const OurGoal = () => {
                 value={70}
                 sx={{ height: 10, borderRadius: 5 }}
               />
-            </Box>
+            </Box> */}
           </Stack>
         </Box>
       </motion.div>

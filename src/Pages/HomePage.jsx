@@ -4,6 +4,7 @@ import Home from '../Component/Home'
 import Partners from '../Component/Partners'
 import ProjectSection from '../Component/ProjectSection'
 import Services from '../Component/Services'
+// import Team from '../Component/Team'
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Services/>
       <ProjectSection/>
       <Partners/>
+      {/* <Team/> */}
 
 
     </div>
