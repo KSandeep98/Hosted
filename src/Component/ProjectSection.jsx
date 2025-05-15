@@ -14,7 +14,7 @@ export default function ProjectSection() {
           <Box
             component="img"
             src="/Featured.jpg"
-            alt="Alpha Developer Team"
+            alt="HostedMinds Team"
             sx={{
               width: '100%', maxWidth: 500,
               height: 300, borderRadius: 2
@@ -24,37 +24,63 @@ export default function ProjectSection() {
 
         {/* Right Text Content */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
-            We Are
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            gutterBottom
+            sx={{ textAlign: { xs: "center", md: "left" } }}
+          >
+            Why Choose
           </Typography>
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
-            HostedMinds
-          </Typography>
-          <Typography variant="body1" color="text.secondary" paragraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores in, incidunt velit laboriosam vitae iste eum fuga rem molestias atque cum aliquam officia error temporibus laudantium debitis asperiores exercitationem.
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            gutterBottom
+            sx={{ textAlign: { xs: "center", md: "left" } }}
+          >
+            Hostedminds?
           </Typography>
 
+
+
           <Grid container spacing={2}>
-            {['Quality', 'Easy Implementation', 'Ongoing Support', 'Client-Centric Approach'].map((item) => (
-              <Grid item xs={6} key={item}>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <Check color="#06b6d4" />
-                  <Typography color="text.secondary">{item}</Typography>
-                </Box>
-              </Grid>
-            ))}
+            {[
+              "Innovation-Centric: We're not just service providers we are creators. Innovation drives everything we do.",
+              'Hands-On Learning: We believe in experiential learning. Our education programs are built around real-world application.',
+              'End-to-End Solutions: From concept to execution, we handle every stage of the tech lifecycle.',
+              'Experienced Team: Our team consists of certified educators, developers, engineers, and domain experts.',
+              'Customized Approach: We tailor our solutions and teaching methodologies based on our clients’ and learners’ unique needs.',
+              "Affordable Excellence: Quality doesn't have to come with a hefty price tag. We deliver high-value services at competitive prices."
+            ].map((item) => {
+              const [title, ...rest] = item.split(':');
+              return (
+                <Grid item xs={12} key={item}>
+                  <Box display="flex" alignItems="flex-start" gap={1}>
+                    <Box sx={{ color: '#06b6d4', fontSize: '24px', mt: '4px' }}>
+                      <Check />
+                    </Box>
+                    <Typography color="text.secondary">
+                      <Box component="span" fontWeight="bold" display="inline">
+                        {title}:
+                      </Box>{' '}
+                      {rest.join(':')}
+                    </Typography>
+                  </Box>
+                </Grid>
+              );
+            })}
           </Grid>
+
         </Grid>
       </Grid>
 
-      {/* CountUp Section */}
       {/* CountUp Section */}
       <Grid
         container
         spacing={4}
         justifyContent="center"
         textAlign="center"
-        mt={8}
+        mt={4}
         ref={ref}
       >
         {[
@@ -64,7 +90,7 @@ export default function ProjectSection() {
           { label: 'Projects Delivered On Time', value: 100, suffix: '%' },
           { label: 'Customer Satisfaction', value: 98, suffix: '%' }
         ].map(({ label, value, suffix }) => (
-          <Grid  item xs={6} md={2} key={label} >
+          <Grid item xs={6} md={2} key={label} >
             <Typography variant="h3" fontWeight="bold" color="primary" component="div">
               {inView && (
                 <span style={{ display: 'inline-flex', alignItems: 'flex-end' }}>

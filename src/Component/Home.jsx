@@ -23,7 +23,7 @@ const Home = () => {
             fontSize: { xs: "2rem", md: "3.75rem" },
           }}
         >
-          Welcome to HostedMinds
+          Welcome to Hostedminds
           <Box component="span" sx={{ display: "block", color: "primary.main" }}>
             Explore the Possibilities
           </Box>

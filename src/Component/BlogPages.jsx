@@ -38,12 +38,7 @@ const blogPosts = [
 // Styled Paper component with hover effect
 const AnimatedPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
-  // transition: "transform 0.3s, box-shadow 0.3s",
-  // "&:hover": {
-  //   transform: "scale(1.02)",
-  //   boxShadow: theme.shadows[6],
-  // },
-  height: "100%", // Ensure the paper fills the height of its parent
+  height: "100%", 
 }));
 
 const BlogPages = () => {
@@ -53,7 +48,7 @@ const BlogPages = () => {
   return (
     <Box
       sx={{
-        padding:4,
+        padding:2,
         py: 2,
         backgroundColor: "#f5f5f5",
         display: "flex",

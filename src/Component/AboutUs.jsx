@@ -31,12 +31,11 @@ const AboutUs = () => {
                     }}
                 >
                     <Box>
-                        <Typography variant="h4" gutterBottom>
-                            Discover the Power of Nature
+                        <Typography variant="h5" gutterBottom sx={{fontWeight:"bold", color:"black"}}>
+                           Empowering the Future with Technology and Innovation
                         </Typography>
                         <Typography variant="body1" color="text.secondary" >
-                            Our herbal products are crafted with care using natural ingredients sourced sustainably from around the world. Rejuvenate your body and mind with our holistic remedies.
-                        </Typography>
+                            At Hostedminds, we are on a mission to ignite curiosity, foster innovation, and shape tomorrow’s tech leaders. With a strong foundation in robotics, STEM education, software development, IoT, and more, our company stands at the forefront of educational and technological advancement. </Typography>
                         <Link to="/about" style={{ textDecoration: 'none' }}>
                         <Typography style={{ textDecoration: 'none', color: '#1976d2', fontWeight: 'bold' }}>
                             View More →

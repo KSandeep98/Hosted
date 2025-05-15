@@ -10,13 +10,15 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Slide } from "@mui/material";
+
 
 const navItems = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/", scrollToId: "services" },
   { name: "Shop", href: "/shop" },
   { name: "Contact", href: "/", scrollToId: "contact" },
-  { name: "Insights", href: "/Insights" },
+  { name: "Insights", href: "/insight" },
 ];
 
 const Header = () => {
@@ -136,36 +138,39 @@ const Header = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Menu */}
-      {isMobile && isOpen && (
-        <Box
-          sx={{
-            position: "fixed",
-            top: 56,
-            left: 0,
-            width: "100%",
-            backgroundColor: "#69c",
-            zIndex: 1100,
-            textAlign: "center",
-          }}
-        >
-          {navItems.map((item, index) => (
-            <Box
-              key={index}
-              sx={{
-                py: 1,
-                fontSize: "18px",
-                color: "white",
-                cursor: "pointer",
-                "&:hover": { color: "black" },
-              }}
-              onClick={() => handleNavClick(item)}
-            >
-              {item.name}
-            </Box>
-          ))}
-        </Box>
+      {isMobile && (
+        <Slide direction="down" in={isOpen} mountOnEnter unmountOnExit>
+          <Box
+            sx={{
+              position: "fixed",
+              top: 56,
+              left: 0,
+              width: "100%",
+              backgroundColor: "#69c",
+              zIndex: 1100,
+              textAlign: "center",
+              transition: "all 2s ease-in-out",
+            }}
+          >
+            {navItems.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  py: 1,
+                  fontSize: "18px",
+                  color: "white",
+                  cursor: "pointer",
+                  "&:hover": { color: "black" },
+                }}
+                onClick={() => handleNavClick(item)}
+              >
+                {item.name}
+              </Box>
+            ))}
+          </Box>
+        </Slide>
       )}
+
     </Box>
   );
 };

@@ -136,17 +136,19 @@ export default function ContactForm() {
 
   return (
     <>
-      <div id="contact" style={{ paddingTop: "10px" }}></div>
-        <Container>
+      <div id="contact" style={{ paddingTop: "10px",}}></div>
+      <Box sx={{backgroundColor: "#f0f0f0",py:4}}>
+        <Container >
           <Box
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
               height: { md: "80%", xs: "auto" },
-              my: 10,
+              my: 4,
               borderRadius: 2,
               overflow: "hidden",
               boxShadow: 5,
+               
             }}
           >
             {/* Left Side - Map and Contact Info */}
@@ -226,7 +228,7 @@ export default function ContactForm() {
                     textAlign: "center",
                   }}
                 >
-                  SEND A MESSAGE
+                  Reach Out to Us
                 </Typography>
 
                 <Box
@@ -264,7 +266,7 @@ export default function ContactForm() {
                   <TextField
                     name="reply_to"
                     placeholder="Mobile Number"
-                    type="tel"
+                    type="number"
                     value={formData.reply_to}
                     onChange={handleChange}
                     fullWidth
@@ -297,7 +299,7 @@ export default function ContactForm() {
                       backgroundColor: "#69c",
                       color: "white",
                       fontWeight: "bold",
-                      width: "50%",
+                      width: "20%",
                       mx: "auto",
                       py: 1,
                       "&:hover": { backgroundColor: "#1c3d66" },
@@ -310,7 +312,7 @@ export default function ContactForm() {
             </Paper>
           </Box>
         </Container>
-    
+    </Box>
     </>
   );
 }
